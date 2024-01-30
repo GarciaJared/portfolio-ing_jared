@@ -1,24 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import Badge from "../components/Badge.astro";
+//ICONS
 import Socialpill from "../components/Socialpill.astro";
 import Myicon from "../components/icons/Myicon.astro";
 import Githubicon from "../components/icons/Githubicon.astro";
 import Linkedin from "../components/icons/Linkedin.astro";
 import Emailicon from "../components/icons/Emailicon.astro";
-
+import Experience from "../components/Experience.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
 ---
 
-<Layout 
-	title="Portafolio Jared Garcia - Desarrollador y programador web mexicano"
-	description="If you want to add up a new ally to your team and build wow Interfaces do not forget to reach me by email or social media" 
+<Layout
+  title="Portafolio Jared Garcia - Desarrollador y programador web mexicano"
+  description="If you want to add up a new ally to your team and build wow Interfaces do not forget to reach me by email or social media"
 >
   <main>
     <div class="flex justify-center py-4">
       <Myicon />
     </div>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
+    <SectionContainer class="py-44 pb-20">
       <h1
         class="text-white text-5xl font-bold flex justify-center flex-grow gap-x-4 pb-10"
       >
@@ -46,11 +48,16 @@ import Emailicon from "../components/icons/Emailicon.astro";
           <Githubicon class="size-6" />
           Github
         </Socialpill>
-		<Socialpill href="https://github.com/GarciaJared">
-			<Emailicon class="size-6" />
-			Jared.garcia.dev@gmail.com
-		  </Socialpill>
+        <Socialpill href="https://github.com/GarciaJared">
+          <Emailicon class="size-6" />
+          Jared.garcia.dev@gmail.com
+        </Socialpill>
       </nav>
-    </section>
+    </SectionContainer>
+    <SectionContainer>
+      <Briefcase class="size-6" />
+      <h2 class="text-2xl font-semibold mb-6 flex gap-x-2">Experience</h2>
+      <Experience />
+    </SectionContainer>
   </main>
 </Layout>
