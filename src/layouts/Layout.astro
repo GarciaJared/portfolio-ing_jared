@@ -23,7 +23,7 @@ const { description, title } = Astro.props;
   <body>
     <Header />
     <slot />
-    <Footer/>
+    <Footer />
   </body>
 </html>
 <style is:global>
@@ -65,5 +65,8 @@ const { description, title } = Astro.props;
     html {
       scroll-behavior: auto;
     }
+  }
+  .rotate-deg {
+    transform: rotate(20deg);
   }
 </style>
