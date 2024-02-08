@@ -1,27 +1,29 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Badge from "../components/Badge.astro";
-import Projects from "../components/Projects.astro";
+import Layout from "@/layouts/Layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Badge from "@/components/Badge.astro";
+import Projects from "@/components/Projects.astro";
 
 //ICONS
-import Socialpill from "../components/Socialpill.astro";
-import Myicon from "../components/icons/Myicon.astro";
-import Githubicon from "../components/icons/Githubicon.astro";
-import Linkedin from "../components/icons/Linkedin.astro";
-import Emailicon from "../components/icons/Emailicon.astro";
-import Experience from "../components/Experience.astro";
-import Briefcase from "../components/icons/Briefcase.astro";
-import Code from "../components/icons/Code.astro";
+import Socialpill from "@/components/Socialpill.astro";
+import Aboutme from "@/components/Aboutme.astro";
+import Myicon from "@/components/icons/Myicon.astro";
+import Githubicon from "@/components/icons/Githubicon.astro";
+import Linkedin from "@/components/icons/Linkedin.astro";
+import Emailicon from "@/components/icons/Emailicon.astro";
+import Experience from "@/components/Experience.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import Code from "@/components/icons/Code.astro";
+import AboutmeIcon from "@/components/icons/AboutmeIcon.astro";
 ---
 
 <Layout
   title="Portafolio Jared Garcia - Desarrollador y programador web mexicano"
-  description="If you want to add up a new ally to your team and build wow Interfaces do not forget to reach me by email or social media"
+  description="If you want to add up a new ally to your team and build wow Interfaces do not forget to reach me out by email or social media"
 >
   <main>
     <div class="flex justify-center py-4">
-      <Myicon class="rotate-deg py-1" />
+      <Myicon class="rotate-deg py-1 mt-20" />
     </div>
     <SectionContainer class="py-44 pb-20">
       <h1
@@ -32,40 +34,51 @@ import Code from "../components/icons/Code.astro";
           href="http"
           target="_blank"
           rel="noopener"
-          class="flex justify-center items-center"
+          class="flex justify-center items-center hover:scale-105 transition"
         >
           <Badge>Disponible para trabajar</Badge>
         </a>
       </h1>
-      <h2 class="text-xl lg:text-2xl opacity-80  max-w-[700px]">
-        <span>Passionate web developer</span> specializing in UX/UI and frontend
-        design. Elevating user experiences through creative and intuitive solutions.
+      <h2 class="text-xl lg:text-2xl opacity-80 max-w-[700px] text-pretty">
+        <span>Desarrollador de grandes experiencias basadas en datos</span> Traduzco
+        las necesidades del usuario en interfaces gráficas funcionales y atractivas
       </h2>
 
       <nav class="flex gap-4 mt-8 flex-wrap">
         <Socialpill href="https://www.linkedin.com/in/jared-garc%C3%ADa/">
-          <Linkedin class="size-4 md:size-6" />
+          <Linkedin class="size-2 md:size-6" />
           LinkedIn
         </Socialpill>
         <Socialpill href="https://github.com/GarciaJared">
-          <Githubicon class="size-4 md:size-6" />
+          <Githubicon class="size-2 md:size-6" />
           Github
         </Socialpill>
         <Socialpill href="mailto:Jared.garcia.dev@gmail.com>">
-          <Emailicon class="size-4 md:size-6" />
+          <Emailicon class="size-2 md:size-6" />
           Jared.garcia.dev@gmail.com
         </Socialpill>
       </nav>
     </SectionContainer>
-    <SectionContainer id="Experience">
-      <Briefcase class="size-7" />
-      <h2 class="text-2xl font-semibold mb-6 flex gap-x-2">Experience</h2>
-      <Experience />
-    </SectionContainer>
-    <SectionContainer id="Projects">
-      <Code class="size-7" />
-      <h2 class="text-2xl font-semibold mb-6 flex gap-x-2">Experience</h2>
-      <Projects />
-    </SectionContainer>
+    <div class="space-y-24">
+      <SectionContainer id="Experience">
+        <Briefcase class="size-7" />
+        <h2 class="text-2xl font-semibold mb-6 flex gap-x-2">
+          Experiencia Profesional
+        </h2>
+        <Experience />
+      </SectionContainer>
+      <SectionContainer id="Projects">
+        <Code class="size-7" />
+        <h2 class="text-2xl font-semibold mb-6 flex gap-x-2">
+          Mis mejores proyectos
+        </h2>
+        <Projects />
+      </SectionContainer>
+      <SectionContainer id="Aboutme" class="mt-10">
+        <AboutmeIcon class="size-7" />
+        <h2 class="text-2xl font-semibold mb-6 flex gap-x-2">Acerca de mí</h2>
+        <Aboutme />
+      </SectionContainer>
+    </div>
   </main>
 </Layout>

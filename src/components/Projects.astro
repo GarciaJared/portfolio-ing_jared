@@ -1,4 +1,6 @@
 ---
+import LinkButton from "./LinkButton.astro";
+import Githubicon from "./icons/Githubicon.astro";
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 
@@ -15,19 +17,28 @@ TAILWIND:{
   icon: Tailwind
 },
 }
-const PROJECTS = [
+const PROJECTS = [ 
   {
-    title: "Promptia",
-    description: "It is an open source AI prompting tool for modern world, create and share the best prompts to your coder mates. Made in yt course",
-    link: "#",
-    github: "",
-    img: "public/promptia_example.png",
+    title: "Proyecto Migala",
+    description: "Colaborando activamente en la página web del proyecto Migala. Organización social en favor de la sociedad Mexicana",
+    link: "https://www.proyectomigala.global/",
+    github: "https://github.com/ProyectoMigala/proyectomigala.github.io",
+    img: "/proyecto_migala.png",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
   },
+  {
+    title: "Promptia",
+    description: "Aplicación web para hacer promps de Inteligencia Artificial",
+    link: "#",
+    github: "",
+    img: "/promptia_example.png",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+ 
 ];
 ---
-
-{
+<div class="flex flex-col gap-y-12">
+  {
   PROJECTS.map(({ title, description, link, github, img, tags }) => (
     <article>
       <h3 class="text-2xl font-semibold text-blue-300 mb-2">{title}</h3>
@@ -36,16 +47,27 @@ const PROJECTS = [
         {tags.map((tag) => (
            <li>   
               <span class= ` flex gap-x-2 rounded-full text-sm ${tag.class} py-2 px-1` >
-                <tag.icon class="size-5"/>
+                <tag.icon class="size-4"/>
                 {tag.name}
               </span>       
           </li>
         ))}
       </ul>
       <img 
+      loading="lazy"
       class="rounded shadow-2xl shadow-white/15"
       src={img} 
       alt=`Screenshot about ${title}` />
+      <footer class="flex gap-x-4 mt-1">
+        {github && (
+              <LinkButton href={github}>
+          <Githubicon class="size-4 md:size-6 mr-2"/>Ver código
+          </LinkButton>
+        )}
+    
+        </footer>
     </article>
   ))
 }
+</div>
+

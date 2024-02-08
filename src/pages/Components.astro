@@ -1,0 +1,30 @@
+---
+import Badge from "@/components/Badge.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Socialpill from "@/components/Socialpill.astro";
+import Code from "@/components/icons/Code.astro";
+import Linkedin from "@/components/icons/Linkedin.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="System Design portfolio"
+  description="Cátalogo de componentes del portfolio"
+>
+  <SectionContainer class="py-44 pb-3 flex flex-col gap-y-10">
+    <article>
+      <h1>&lt;Badge /&gt;</h1>
+      <Badge>Nextjs</Badge>
+    </article>
+
+    <article>
+      <div class="flex">
+        <h1>&lt;Socialpill /&gt;</h1>
+        <Socialpill>
+          <Code class="size-4 md:size-6" />
+          Experience
+        </Socialpill>
+      </div>
+    </article>
+  </SectionContainer>
+</Layout>

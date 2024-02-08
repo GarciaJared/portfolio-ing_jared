@@ -1,9 +1,13 @@
-<header class="flex justify-center items-center py-5 w-[1120px] mx-auto">
+---
+import HomeIcon from "./icons/homeIcon.astro";
+---
+
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 bg-[#15223d] size-10">
   <nav class="flex flex-row gap-x-10 opacity">
-    <a href="#top">Home</a>
-    <a href="#Experience">Experience</a>
-    <a href="#Projects">Projects</a>
-    <a href="#Aboutme">'bout me</a>
-    <a href="#Contact">Contact</a>
+    <a href="#top"><HomeIcon class="size-6 md:size-6" /></a>
+    <a href="#Experience">Experiencia</a>
+    <a href="#Projects">Proyectos</a>
+    <a href="#Aboutme">Acerca de mí</a>
+    <a href="#Contact">Contactame</a>
   </nav>
 </header>
