@@ -2,12 +2,47 @@
 import HomeIcon from "./icons/homeIcon.astro";
 ---
 
-<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 bg-[#15223d] size-10">
+<header
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 bg-[#15223d] size-10"
+>
   <nav class="flex flex-row gap-x-10 opacity">
     <a href="#top"><HomeIcon class="size-6 md:size-6" /></a>
     <a href="#Experience">Experiencia</a>
     <a href="#Projects">Proyectos</a>
     <a href="#Aboutme">Acerca de mí</a>
-    <a href="#Contact">Contactame</a>
+    <button id="downloadCv">Descargar</button>
   </nav>
 </header>
+
+<!-- Inside your HTML file, after the button -->
+<script>
+  var downloadButton = document.getElementById("downloadCv");
+
+  // Check if the element with ID 'downloadButton' exists
+  if (downloadButton) {
+    downloadButton.addEventListener("click", function () {
+      // Replace 'path/to/your/file.pdf' with the actual path to your PDF file
+      var pdfPath = "/cv_jared_garcia.pdf";
+
+      // Create a link element
+      var link = document.createElement("a");
+
+      // Set the download attribute to force download
+      link.download = "cv_jared_garcia.pdf";
+
+      // Set the href attribute to the path of the PDF file
+      link.href = pdfPath;
+
+      // Append the link to the body
+      document.body.appendChild(link);
+
+      // Trigger a click on the link to start the download
+      link.click();
+
+      // Remove the link from the DOM
+      document.body.removeChild(link);
+    });
+  } else {
+    console.error("Element with ID 'downloadButton' not found");
+  }
+</script>

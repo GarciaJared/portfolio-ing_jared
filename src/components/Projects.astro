@@ -1,6 +1,7 @@
 ---
 import LinkButton from "./LinkButton.astro";
 import Githubicon from "./icons/Githubicon.astro";
+import HugoIcon from "./icons/HugoIcon.astro";
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 
@@ -16,6 +17,11 @@ TAILWIND:{
  class: "bg-[#003159] text-white",
   icon: Tailwind
 },
+HUGOSERVER:{
+  name: "HUGO",
+ class: "bg-[#C9177E] text-white",
+  icon: HugoIcon
+},
 }
 const PROJECTS = [ 
   {
@@ -24,7 +30,7 @@ const PROJECTS = [
     link: "https://www.proyectomigala.global/",
     github: "https://github.com/ProyectoMigala/proyectomigala.github.io",
     img: "/proyecto_migala.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.HUGOSERVER, TAGS.TAILWIND],
   },
   {
     title: "Promptia",
