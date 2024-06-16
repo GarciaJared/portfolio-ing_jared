@@ -1,0 +1,66 @@
+---
+import LinkButton from "./LinkButton.astro";
+import Githubicon from "./icons/Githubicon.astro";
+import HugoIcon from "./icons/HugoIcon.astro";
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Yt from "./icons/yt.astro";
+
+const TAGS ={
+ 
+PLN:{
+ name: "PLN",
+ class: "bg-black text-white",
+
+},
+EAHNM:{
+ name: "EAHNM",
+ class: "bg-black text-white",
+
+},
+}
+const PROJECTS = [ 
+  {
+    title: "Ponente: Sira'le Sistema Rarámuri de Lenguaje",
+    description:"Sira'le es un anteproyecto propuesto en la EAHNM y en el congreso PLNIndigenas 2024. Se habla acerca de la necesidad de crear modelos de procesamiento de lenguaje natural para las lenguas indigenas, en especial para el Rarámuri para promover su uso y aprendizaje en distintas áreas o con la finalidad de incluir a los hablantes nativos en la digitalización. El proposito es crear un traductor Rarámuri-Español con PLN. ",
+    link: "https://youtu.be/QwKSqflcaNU?t=8459",
+    yt: "https://youtu.be/QwKSqflcaNU?t=8459",
+    img: "/pln_jared.webp",
+    tags: [TAGS.PLN, TAGS.EAHNM],
+  },
+];
+---
+<div class="flex flex-col gap-y-12">
+  {
+  PROJECTS.map(({ title, description, link, yt, img, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-blue-300 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-4 flex-row mb-2">
+        {tags.map((tag) => (
+           <li>   
+              <span class= ` flex gap-x-2 rounded-full text-sm ${tag.class} py-2 px-1` >
+                <tag class="size-1"/>
+                {tag.name}
+              </span>       
+          </li>
+        ))}
+      </ul>
+      <img 
+      loading="lazy"
+      class="rounded shadow-2xl #ffff"
+      src={img} 
+      alt=`Screenshot about ${title}` />
+      <footer class="flex gap-x-4 mt-1">
+        {yt && (
+              <LinkButton href={yt}>
+          <Yt class="size-4 md:size-6 mr-2"/>Ver Conferencia
+          </LinkButton>
+        )}
+    
+        </footer>
+    </article>
+  ))
+}
+</div>
+

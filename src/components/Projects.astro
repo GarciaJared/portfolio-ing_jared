@@ -3,6 +3,7 @@ import LinkButton from "./LinkButton.astro";
 import Githubicon from "./icons/Githubicon.astro";
 import HugoIcon from "./icons/HugoIcon.astro";
 import NextJS from "./icons/NextJS.astro"
+import Python from "./icons/Python.astro";
 import Tailwind from "./icons/Tailwind.astro"
 
 const TAGS ={
@@ -22,6 +23,11 @@ HUGOSERVER:{
  class: "bg-[#C9177E] text-white",
   icon: HugoIcon
 },
+PYTHON:{
+  name: "PYTHON",
+ class: "bg-[#f1f1] text-white",
+  icon: Python
+},
 }
 const PROJECTS = [ 
   {
@@ -33,14 +39,21 @@ const PROJECTS = [
     tags: [TAGS.HUGOSERVER, TAGS.TAILWIND],
   },
   {
-    title: "Promptia",
-    description: "Aplicación web para hacer promps de Inteligencia Artificial",
+    title: "Rendimiento Estudiantil",
+    description: "Script en Python de ETL para la limpieza y análisis de datos para determinar el rendimiento de mis estudiantes de idiomas.",
     link: "#",
     github: "",
-    img: "/promptia_example.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    img: "/students.webp",
+    tags: [TAGS.PYTHON],
   },
- 
+  {
+    title: "Análisis de proporción de ingresos",
+    description: "Script en Python de ETL para la limpieza y análisis de datos con la finalidad de determinar la proporción de maneras de pago ded los comensales en el Hotel Tarahumara ASYNTUR.",
+    link: "#",
+    github: "",
+    img: "/profits.webp",
+    tags: [TAGS.PYTHON],
+  },
 ];
 ---
 <div class="flex flex-col gap-y-12">
@@ -70,7 +83,6 @@ const PROJECTS = [
           <Githubicon class="size-4 md:size-6 mr-2"/>Ver código
           </LinkButton>
         )}
-    
         </footer>
     </article>
   ))

@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Badge from "@/components/Badge.astro";
 import Projects from "@/components/Projects.astro";
+import Academy from "@/components/Academy.astro";
 
 //ICONS
 import Socialpill from "@/components/Socialpill.astro";
@@ -15,6 +16,7 @@ import Experience from "@/components/Experience.astro";
 import Briefcase from "@/components/icons/Briefcase.astro";
 import Code from "@/components/icons/Code.astro";
 import AboutmeIcon from "@/components/icons/AboutmeIcon.astro";
+import AcademyIcon from "@/components/icons/AcademyIcon.astro";
 ---
 
 <Layout
@@ -73,6 +75,13 @@ import AboutmeIcon from "@/components/icons/AboutmeIcon.astro";
           Mis mejores proyectos
         </h2>
         <Projects />
+      </SectionContainer>
+      <SectionContainer id="Academics">
+        <AcademyIcon class="size-7" />
+        <h2 class="text-2xl font-semibold mb-6 flex gap-x-2">
+          Experiencia Académica
+        </h2>
+        <Academy />
       </SectionContainer>
       <SectionContainer id="Aboutme" class="mt-10">
         <AboutmeIcon class="size-7" />
