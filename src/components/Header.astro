@@ -45,10 +45,14 @@ import HomeIcon from "./icons/homeIcon.astro";
   const toggleButton = document.getElementById("menuToggle");
   const mobileMenu = document.getElementById("mobileMenu");
 
-  toggleButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    mobileMenu.classList.toggle("flex");
-  });
+  if (toggleButton && mobileMenu) {
+    toggleButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("flex");
+    });
+  } else {
+    console.error("Element with ID 'menuToggle' or 'mobileMenu' not found");
+  }
   var downloadButton = document.getElementById("downloadCv");
 
   // Check if the element with ID 'downloadButton' exists
