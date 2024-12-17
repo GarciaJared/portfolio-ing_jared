@@ -9,6 +9,6 @@ export default defineConfig({
   output: 'server',
   adapter: vercel({
     webAnalytics: { enabled: true }, 
-    includeFiles:['./cv_jared_garcia.pdf']
+    includeFiles:['./public/cv_jared_garcia.pdf']
   }),
 });
