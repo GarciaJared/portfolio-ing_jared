@@ -5,6 +5,8 @@ import HugoIcon from "./icons/HugoIcon.astro";
 import NextJS from "./icons/NextJS.astro"
 import Python from "./icons/Python.astro";
 import Tailwind from "./icons/Tailwind.astro"
+import Iconastro from "./icons/Iconastro.astro"
+import IconLink from  "./icons/IconLink.astro"
 
 const TAGS ={
  
@@ -25,8 +27,13 @@ HUGOSERVER:{
 },
 PYTHON:{
   name: "PYTHON",
- class: "bg-[#f1f1] text-white",
+ class: "bg-[#003159] text-white",
   icon: Python
+},
+Astrof:{
+  name: "ASTRO",
+ class: "bg-[#C9177E] text-white",
+  icon: Iconastro
 },
 }
 const PROJECTS = [ 
@@ -41,18 +48,26 @@ const PROJECTS = [
   {
     title: "Rendimiento Estudiantil",
     description: "Script en Python de ETL para la limpieza y análisis de datos para determinar el rendimiento de mis estudiantes de idiomas.",
-    link: "#",
+    link: "",
     github: "",
     img: "/students.webp",
     tags: [TAGS.PYTHON],
   },
   {
-    title: "Análisis de proporción de ingresos",
-    description: "Script en Python de ETL para la limpieza y análisis de datos con la finalidad de determinar la proporción de maneras de pago ded los comensales en el Hotel Tarahumara ASYNTUR.",
-    link: "#",
+    title: "Redgir Idiomas",
+    description: "Diseño  y desarrollo de pagina web, además de estrategia de SEO para el sitio web, se uso para LYCHEE para optimización.",
+    link: "https://redgiridiomas.com",
+    github: "https://github.com/GarciaJared/ClasesRedgir",
+    img: "/redgiridiomas.webp",
+    tags: [TAGS.Astrof],
+  },
+  {
+    title: "Juriscorp",
+    description: "Diseño  y desarrollo de pagina web para un despacho de abogados en Chihuahua. Juriscorp es un cliente al que se le ha diseñado una estrategia de contenido, análisis de datos con Robyn y desarrollo web.",
+    link: "https://juriscorp.com.mx",
     github: "",
-    img: "/profits.webp",
-    tags: [TAGS.PYTHON],
+    img: "/juriscorp.webp",
+    tags: [TAGS.Astrof],
   },
 ];
 ---
@@ -82,7 +97,14 @@ const PROJECTS = [
               <LinkButton href={github}>
           <Githubicon class="size-4 md:size-6 mr-2"/>Ver código
           </LinkButton>
+         
+        ) } {link &&(
+              <LinkButton href={link}>
+              <IconLink class="size-4 md:size-6 mr-2"/>Ver página
+                </LinkButton>
         )}
+        
+        
         </footer>
     </article>
   ))
